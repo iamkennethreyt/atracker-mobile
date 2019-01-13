@@ -1,19 +1,39 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { HomePage } from "../home/home";
+import { SettingsPage } from "../settings/settings";
+import { AlertController, NavController } from "ionic-angular";
+import { LoginPage } from "../login/login";
+import { LogoutPage } from "../logout/logout";
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: "tabs.html"
 })
 export class TabsPage {
-
   tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab2Root = SettingsPage;
+  tab3Root = LogoutPage;
 
-  constructor() {
-
+  constructor(
+    public alertCtrl: AlertController,
+    public navCtrl: NavController
+  ) {}
+  logout() {
+    const confirm = this.alertCtrl.create({
+      title: "Logout account",
+      message: "Do you want to logout account",
+      buttons: [
+        {
+          text: "Cancel"
+        },
+        {
+          text: "Ok",
+          handler: () => {
+            this.navCtrl.push(LoginPage);
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 }

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="danger"> <ion-title>Students List</ion-title> </ion-navbar>
+</ion-header>
+<!-- *ngFor="let cs of classsections" -->
+<ion-content padding>
+  <ion-card *ngFor="let student of students">
+    <ion-card-content>
+      <ion-card-title>
+        {{ student.student.firstname }} {{ student.student.lastname }}
+      </ion-card-title>
+      <p>Guardian name : {{ student.student.guardianname }}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button
+          ion-button
+          icon-start
+          small
+          color="danger"
+          outline
+          (click)="viewAttendance(student.student._id)"
+        >
+          <ion-icon name="eye"></ion-icon>
+          <div>View Attendance</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

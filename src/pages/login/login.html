@@ -1,0 +1,22 @@
+<div>
+  <form (ngSubmit)="loginForm()" padding>
+    <h1 text-center ion-text color="danger">aTracker</h1>
+    <ion-item>
+      <ion-label>Teacher ID</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="teacher.teacherid"
+        name="teacherid"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="teacher.password"
+        name="password"
+      ></ion-input>
+    </ion-item>
+    <button ion-button type="submit" color="danger" block>Login</button>
+  </form>
+</div>

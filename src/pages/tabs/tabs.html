@@ -1,5 +1,9 @@
-<ion-tabs>
+<ion-tabs color="danger">
   <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+  <ion-tab
+    [root]="tab2Root"
+    tabTitle="Account settings"
+    tabIcon="settings"
+  ></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Sign Out" tabIcon="log-out"> </ion-tab>
 </ion-tabs>

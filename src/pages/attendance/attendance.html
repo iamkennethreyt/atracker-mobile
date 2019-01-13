@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="danger"> <ion-title>Attendance</ion-title> </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h1>{{ student.firstname }} {{ student.lastname }}</h1>
+  <h4 text="light">Student ID: {{ student.studentid }}</h4>
+  <h4>Guardian Name: {{ student.guardianname }}</h4>
+  <h4>Contact Number :{{ student.contactnumber }}</h4>
+  <button ion-button icon-start small color="danger" (click)="sendsms()">
+    <ion-icon name="send"></ion-icon>
+    <div>Send Message to Parents</div>
+  </button>
+
+  <ion-item-group>
+    <ion-item-divider color="light">List of all attendane</ion-item-divider>
+    <ion-item *ngFor="let a of attendances">{{ a.date }}</ion-item>
+  </ion-item-group>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title> Account Settings </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="changesettings()" padding>
+    <ion-item>
+      <ion-label>First name</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="user.firstname"
+        name="firstname"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Middle name</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="user.middlename"
+        name="middlename"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Last name</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="user.lastname"
+        name="lastname"
+      ></ion-input>
+    </ion-item>
+    <button ion-button type="submit" color="danger" block>Save</button>
+    <button ion-button outline color="danger" block>Cancel</button>
+  </form>
+  <button ion-button color="danger" (click)="passwordSettings()" block>
+    Change Password
+  </button>
+</ion-content>
