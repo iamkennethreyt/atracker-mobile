@@ -25,7 +25,7 @@ export class StudentsPage {
   }
 
   ionViewDidLoad() {
-    Axios.get(`http://localhost:5000/api/classsections/${this.id}`)
+    Axios.get(`http://192.168.1.5:5000/api/classsections/${this.id}`)
       .then(res => {
         this.students = res.data.students;
       })

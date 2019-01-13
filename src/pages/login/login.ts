@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, AlertController } from "ionic-angular";
-import axios from "axios";
 import { TabsPage } from "../tabs/tabs";
+import Axios from "axios";
 
 @Component({
   selector: "page-login",
@@ -9,15 +9,24 @@ import { TabsPage } from "../tabs/tabs";
 })
 export class LoginPage {
   teacher = {};
+  sample = "";
   constructor(
     public navCtrl: NavController,
     public alertCtrl: AlertController
-  ) {}
-  loginForm() {
-    axios
-      .post("http://192.168.1.5:5000/api/teachers/login", this.teacher)
+  ) {
+    Axios.get("http://192.168.1.5:5000/api/teachers/test/sample")
       .then(res => {
-        axios.defaults.headers.common["Authorization"] = res.data.token;
+        this.sample = res.data.hello;
+      })
+      .catch(() => {
+        this.sample = "not connected";
+      });
+  }
+
+  loginForm() {
+    Axios.post("http://192.168.1.5:5000/api/teachers/login", this.teacher)
+      .then(res => {
+        Axios.defaults.headers.common["Authorization"] = res.data.token;
         this.navCtrl.push(TabsPage);
       })
       .catch(err => {

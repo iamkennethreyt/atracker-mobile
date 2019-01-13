@@ -19,7 +19,7 @@ export class PasswordPage {
     public alertCtrl: AlertController
   ) {}
   ionViewDidLoad() {
-    Axios.get("http://localhost:5000/api/teachers/current")
+    Axios.get("http://192.168.1.5:5000/api/teachers/current")
       .then(res => {
         this.user = res.data;
       })
@@ -27,7 +27,7 @@ export class PasswordPage {
   }
 
   changesettings() {
-    Axios.put(`http://localhost:5000/api/teachers/accountsettings/password`, {
+    Axios.put(`http://192.168.1.5:5000/api/teachers/accountsettings/password`, {
       password: this.password,
       password2: this.password2,
       password3: this.password3

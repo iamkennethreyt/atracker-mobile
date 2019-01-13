@@ -27,7 +27,13 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-start small color="danger">
+        <button
+          ion-button
+          icon-start
+          small
+          color="danger"
+          (click)="scan(cs._id)"
+        >
           <ion-icon name="qr-scanner"></ion-icon>
           <div>Start Scan QR</div>
         </button>

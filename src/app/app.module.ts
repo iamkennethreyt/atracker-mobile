@@ -14,6 +14,8 @@ import { AttendancePage } from "../pages/attendance/attendance";
 import { SettingsPage } from "../pages/settings/settings";
 import { PasswordPage } from "../pages/password/password";
 import { LogoutPage } from "../pages/logout/logout";
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { Toast } from "@ionic-native/toast";
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { LogoutPage } from "../pages/logout/logout";
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
+    Toast,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
