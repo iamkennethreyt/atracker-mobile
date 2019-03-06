@@ -1,5 +1,7 @@
 <ion-header>
-  <ion-navbar color="danger"> <ion-title>Students List</ion-title> </ion-navbar>
+  <ion-navbar color="primary">
+    <ion-title>Students List</ion-title>
+  </ion-navbar>
 </ion-header>
 <!-- *ngFor="let cs of classsections" -->
 <ion-content padding>
@@ -16,7 +18,7 @@
           ion-button
           icon-start
           small
-          color="danger"
+          color="primary"
           outline
           (click)="viewAttendance(student.student._id)"
         >

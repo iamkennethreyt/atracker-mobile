@@ -14,7 +14,7 @@ export class LoginPage {
     public navCtrl: NavController,
     public alertCtrl: AlertController
   ) {
-    Axios.get("http://192.168.1.5:5000/api/teachers/test/sample")
+    Axios.get("http://192.168.0.113:5000/api/teachers/test/sample")
       .then(res => {
         this.sample = res.data.hello;
       })
@@ -24,7 +24,7 @@ export class LoginPage {
   }
 
   loginForm() {
-    Axios.post("http://192.168.1.5:5000/api/teachers/login", this.teacher)
+    Axios.post("http://192.168.0.113:5000/api/teachers/login", this.teacher)
       .then(res => {
         Axios.defaults.headers.common["Authorization"] = res.data.token;
         this.navCtrl.push(TabsPage);

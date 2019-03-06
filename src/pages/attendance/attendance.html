@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-navbar color="danger"> <ion-title>Attendance</ion-title> </ion-navbar>
+  <ion-navbar color="primary"> <ion-title>Attendance</ion-title> </ion-navbar>
 </ion-header>
 <ion-content padding>
   <h1>{{ student.firstname }} {{ student.lastname }}</h1>
   <h4 text="light">Student ID: {{ student.studentid }}</h4>
   <h4>Guardian Name: {{ student.guardianname }}</h4>
   <h4>Contact Number :{{ student.contactnumber }}</h4>
-  <button ion-button icon-start small color="danger" (click)="sendsms()">
+  <button ion-button icon-start small color="primary" (click)="sendsms()">
     <ion-icon name="send"></ion-icon>
     <div>Send Message to Parents</div>
   </button>

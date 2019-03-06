@@ -1,11 +1,5 @@
 {
   "name": "atracker-mobile",
   "integrations": {},
-  "type": "ionic-angular",
-  "proxies": [
-    {
-      "path": "/api",
-      "proxyUrl": "http://cors.api.com/api"
-    }
-  ]
+  "type": "ionic-angular"
 }
