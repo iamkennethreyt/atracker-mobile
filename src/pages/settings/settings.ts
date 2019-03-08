@@ -19,7 +19,7 @@ export class SettingsPage {
     public alertCtrl: AlertController
   ) {}
   ionViewDidLoad() {
-    Axios.get("http://192.168.254.107:5000/api/teachers/current")
+    Axios.get("http://192.168.1.9:5000/api/teachers/current")
       .then(res => {
         this.user = res.data;
       })
@@ -27,7 +27,7 @@ export class SettingsPage {
   }
 
   changesettings() {
-    Axios.put(`http://192.168.254.107:5000/api/teachers/${this.user._id}`, {
+    Axios.put(`http://192.168.1.9:5000/api/teachers/${this.user._id}`, {
       middlename: this.user.middlename,
       firstname: this.user.firstname,
       lastname: this.user.lastname

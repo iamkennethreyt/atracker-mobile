@@ -27,14 +27,11 @@ export class PasswordPage {
   }
 
   changesettings() {
-    Axios.put(
-      `http://192.168.0.113:5000/api/teachers/accountsettings/password`,
-      {
-        password: this.password,
-        password2: this.password2,
-        password3: this.password3
-      }
-    )
+    Axios.put(`http://192.168.1.9:5000/api/teachers/accountsettings/password`, {
+      password: this.password,
+      password2: this.password2,
+      password3: this.password3
+    })
       .then(() => {
         const alert = this.alertCtrl.create({
           title: "Success",
