@@ -30,7 +30,7 @@ export class AttendancePage {
 
   sendsms() {
     Axios.get(
-      `http://192.168.1.9:5000/api/classsections/sendsms/${this.ids.studentid}`
+      `http://172.20.83.30:5000/api/classsections/sendsms/${this.ids.studentid}`
     )
       .then(res => {
         let alert = this.alertCtrl.create({
@@ -52,7 +52,7 @@ export class AttendancePage {
 
   ionViewDidLoad() {
     Axios.get(
-      `http://192.168.1.9:5000/api/classsections/attendance/${
+      `http://172.20.83.30:5000/api/classsections/attendance/${
         this.ids.classid
       }/${this.ids.studentid}`
     )

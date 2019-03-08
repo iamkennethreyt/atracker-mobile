@@ -19,7 +19,7 @@ export class PasswordPage {
     public alertCtrl: AlertController
   ) {}
   ionViewDidLoad() {
-    Axios.get("http://192.168.1.7:5000/api/teachers/current")
+    Axios.get("http://172.20.83.30:5000/api/teachers/current")
       .then(res => {
         this.user = res.data;
       })

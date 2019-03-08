@@ -26,7 +26,7 @@ export class HomePage {
   ) {}
 
   ionViewDidLoad() {
-    Axios.get("http://192.168.1.9:5000/api/classsections/teachers/current")
+    Axios.get("http://172.20.83.30:5000/api/classsections/teachers/current")
       .then(res => {
         this.classsections = res.data;
         console.log(res.data);
@@ -45,7 +45,7 @@ export class HomePage {
       barcodeData => {
         if (barcodeData.text) {
           Axios.put(
-            `http://192.168.1.9:5000/api/classsections/attendance/${id}`,
+            `http://172.20.83.30:5000/api/classsections/attendance/${id}`,
             {
               student: barcodeData.text
             }
